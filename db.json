@@ -1,0 +1,48 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@gmail.com",
+      "date": "2023-05-16T17:00:00.000Z",
+      "gender": "male",
+      "education": "ปริญญาตรี",
+      "id": 1
+    },
+    {
+      "firstName": "test1",
+      "lastName": "test1",
+      "email": "test1@gmail.com",
+      "date": "2023-05-23T17:00:00.000Z",
+      "gender": "female",
+      "education": "ปริญญาโท",
+      "id": 2
+    },
+    {
+      "firstName": "test2",
+      "lastName": "test2",
+      "email": "test2@gmail.com",
+      "date": "2023-05-23T17:00:00.000Z",
+      "gender": "others",
+      "education": "ปริญญาตรี",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<div mat-dialog-title>
+  <h1>จัดการสมาชิก</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>ชื่อ</mat-label>
+      <input matInput type="text" formControlName="firstName"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>นามสกุล</mat-label>
+      <input matInput type="text" formControlName="lastName"/>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>อีเมล</mat-label>
+      <input matInput type="email" formControlName="email"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>เลือกวันที่</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date"/>
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-radio-group aria-label="Select an option" formControlName="gender">
+      <mat-label><b>เพศ</b></mat-label>
+      <mat-radio-button value="male">ชาย</mat-radio-button>
+      <mat-radio-button value="female">หญิง</mat-radio-button>
+      <mat-radio-button value="others">อื่นๆ</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>ระดับการศึกษา</mat-label>
+      <mat-select formControlName="education">
+        <mat-option *ngFor="let val of education" [value]="val">{{val}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions class="action">
+  <button mat-raised-button type="button" [mat-dialog-close]="false">ยกเลิก</button>
+  <button mat-raised-button color="primary" type="submit">{{data ? 'แก้ไขข้อมูล' : 'บันทึก'}}</button>
+</div>
+</form>
